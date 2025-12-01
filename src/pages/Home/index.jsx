@@ -14,6 +14,10 @@ function Home() {
     navigate('/login')
   }
 
+  function goToRegister() {
+    navigate('/register')
+  }
+
   return (
     <>
       <div className="home-container">
@@ -21,6 +25,7 @@ function Home() {
 
         <button onClick={goTologin} >Tela de Login</button>
         <button onClick={goToGame} >Tela de Games</button>
+        <button onClick={goToRegister} >Tela de Cadastro</button>
       </div>
     </>
   )

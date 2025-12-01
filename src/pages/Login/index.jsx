@@ -14,8 +14,26 @@ function Login() {
 
   return (
     <>
-      <h1>Login Page</h1>
-      <button onClick={handleLogin}>Entrar</button>
+
+      <div className="container">
+
+        <h2>Seja muito bem vindo(a) ao Gamelist!</h2>
+
+        <form className="form">
+          <label htmlFor="username">Usuário:</label>
+          <input type="text" id="username" name="username" />
+
+          <label htmlFor="password">Senha:</label>
+          <input type="password" id="password" name="password" />
+
+          <button onClick={handleLogin}>Entrar</button>
+        </form>
+
+        <a href="/register">Não tem uma conta? Cadastre-se</a>
+
+
+      </div>
+
     </>
   )
 }
