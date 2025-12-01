@@ -14,7 +14,6 @@
 }
 
 .header nav a {
-    color: white;
     text-decoration: none;
     margin: 0 15px;
 }
@@ -24,4 +23,17 @@
     flex-direction: row;
     align-items: center;
     gap: 15px;
+}
+
+.links-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.search-game {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 50px;
 }

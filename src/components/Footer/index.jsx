@@ -1,13 +1,14 @@
 import './style.css'
+import CustomLink from '../CustomLinks/customLink'
 
 export default function Footer() {
   return (
     <footer className="footer">
 
-      <li><a href="https://github.com/Elias-Filipe" target="_blank">GitHub</a></li>
-      <li><a href="https://www.linkedin.com/in/elias-semeao/" target="_blank">LinkedIn</a></li>
-      <li><a href="https://www.instagram.com/elias_flp/" target="_blank">Instagram</a></li>
-      
+      <li><CustomLink to="https://github.com/Elias-Filipe" variant="neon">GitHub</CustomLink></li>
+      <li><CustomLink to="https://www.linkedin.com/in/elias-semeao/" variant="neon">LinkedIn</CustomLink></li>
+      <li><CustomLink to="https://www.instagram.com/elias_flp/" variant="neon">Instagram</CustomLink></li>
+
     </footer>
   )
 }

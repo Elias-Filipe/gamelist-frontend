@@ -1,16 +1,17 @@
 import './style.css'
 import { useNavigate } from 'react-router-dom'
 import Button from '../../components/Buttons/button'
+import Form from '../../components/Forms/form'
 
 function Register() {
 
-  const navigate = useNavigate()
+    const navigate = useNavigate()
 
-  const handleRegister = () => {
-    // Aqui você pode adicionar a lógica de autenticação
-    // Por enquanto, vamos apenas navegar para a página Home
-    navigate('/')
-  }
+    const handleRegister = () => {
+        // Aqui você pode adicionar a lógica de autenticação
+        // Por enquanto, vamos apenas navegar para a página Home
+        navigate('/')
+    }
 
     return (
         <>
@@ -18,16 +19,24 @@ function Register() {
 
                 <h2>Cadastre-se</h2>
 
-                <form className="form">
-                    <label htmlFor="username">Usuário:</label>
-                    <input type="text" placeholder='Seu nome' id="username" name="username" />
+                <div>
+                    <Form
+                        label="Nome"
+                        id="username"
+                        type="text"
+                    />
+                    <Form
+                        label="Email"
+                        id="email"
+                        type="email"
+                    />
+                    <Form
+                        label="Senha"
+                        id="password"
+                        type="password"
+                    />
 
-                    <label htmlFor="email">Email:</label>
-                    <input type="email" placeholder='Seu e-mail' id="email" name="email" />
-
-                    <label htmlFor="password">Senha:</label>
-                    <input type="password" placeholder='Sua nova senha' id="password" name="password" /> 
-                </form>
+                </div>
 
                 <Button onClick={handleRegister}>Cadastrar</Button>
 
