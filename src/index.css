@@ -3,32 +3,17 @@
 
 :root {
   /* Primary colors */
-  --primary-color: #0A0027;
-  --primary-neon-color: #6F00FF;
-  --accent-color: #FF00C8;
-
-  /* Secondary colors */
-  --secundary-color: #00AFFF;
-  --secondary-neon-color: #FF4DFF;
-
-  /* Hover colors */
-  --primary-color-hover: #8A1FFF;
-  --accent-color-hover: #FF33D1;
-
-  /* Condition colors */
-  --sucess-color: #39FF14;
-  --error-color: #FF0044;
-  --warning-color: #F9FF00;
-
-  /* Text colors */
-  --primary-text-color: #FFFFFF;
-  --secondary-text-color: #C8BFFF;
-  --disabled-text-color: #6A5D7F;
-
+  --bg-dark: #0e0e10;
+  --bg-dark-2: #1a1a1d;
+  --primary: #ff4c4ce5;
+  --primary-hover: #ff7a7a;
+  --text-light: #e5e5e5;
+  --text-muted: #a1a1a1;
   --glass-bg: rgba(255, 255, 255, 0.06);
   --glass-border: rgba(255, 255, 255, 0.12);
 
-  --radius: 8px;
+  --radius: 18px;
+  --transition: 0.25s ease;
 
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -53,7 +38,6 @@
   backdrop-filter: blur(12px);
   padding: 20px 40px;
   margin-bottom: 35px;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.45);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -72,8 +56,18 @@
   width: 100%;
   margin-top: 50px;
   padding: 25px 40px;
-  background: var(--primary-color);
+  background: var(--bg-dark-2);
   border-top: 1px solid var(--glass-border);
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 8px;
+}
+
+footer a {
+  color: var(--text-light);
+  text-decoration: none;
 }
 
 * {
@@ -84,12 +78,12 @@
 
 a {
   font-weight: 500;
-  color: var(--primary-neon-color);
+  color: var(--text-light);
   text-decoration: inherit;
 }
 
 a:hover {
-  color: var(--accent-color-hover);
+  color: var(--primary);
 }
 
 body {
@@ -103,7 +97,7 @@ body {
 
   background:
     linear-gradient(rgba(10, 10, 10, 0.55), rgba(10, 10, 10, 0.7)),
-    url("./assets/background.jpg") center/cover no-repeat fixed;
+    url("./assets/background3.jpg") center/cover no-repeat fixed;
 }
 
 h1 {
@@ -112,19 +106,19 @@ h1 {
 }
 
 button {
-  border-radius: 8px;
+  border-radius: var(--radius);
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: var(--primary-color);
+  background-color: var(--primary);
   cursor: pointer;
   transition: border-color 0.25s;
 }
 
 button:hover {
-  border-color: var(--primary-color-hover);
+  border-color: var(--primary-hover);
 }
 
 button:focus,
@@ -153,7 +147,7 @@ form {
   gap: 15px;
   padding-left: 10%;
   padding-right: 10%;
-  color: var(--secondary-text-color);
+  color: var(--text-muted);
 }
 
 
