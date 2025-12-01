@@ -2,7 +2,6 @@ import Home from './pages/Home'
 import Game from './pages/Game'
 import Login from './pages/Login'
 import Register from './pages/Register'
-
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
@@ -23,8 +22,6 @@ function App() {
           <Footer />
         </BrowserRouter>
       </main>
-
-
     </>
   );
 }

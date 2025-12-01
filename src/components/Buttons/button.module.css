@@ -1,0 +1,40 @@
+button {
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--primary);
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: var(--primary-hover);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.small {
+  padding: 0.4em 0.8em;
+  font-size: 0.9em;
+}
+
+.medium {
+  padding: 0.6em 1.2em; 
+}
+
+.large {
+  padding: 0.9em 1.6em;
+  font-size: 1.1em;
+}
+
+.disabled {
+  background-color: var(--text-muted);
+  cursor: not-allowed;
+  border-color: transparent;
+}

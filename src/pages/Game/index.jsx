@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import Button from '../../components/Buttons/button'
 
 import './style.css'
 
@@ -34,7 +35,7 @@ function Game() {
           </div>
 
         </div>
-        <button onClick={goToHome} >Tela Inicial</button>
+        <Button onClick={goToHome} >Tela Inicial</Button>
       </div>
     </>
   )

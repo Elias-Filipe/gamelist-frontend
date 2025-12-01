@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import './style.css'
+import './style.css';
+import Button from '../../components/Buttons/button'
 
 export default function Header() {
 
@@ -16,7 +17,7 @@ export default function Header() {
         <Link to="/">Favoritos</Link>
 
         <input type="text" id="campoBusca" placeholder="Buscar jogos..." aria-label="Busca de jogos" />
-        <button >Buscar</button>
+        <Button >Buscar</Button>
 
       </nav>
     </header>

@@ -1,32 +1,37 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import Button from '../../components/Buttons/button'
 
 import './style.css'
 
 function Home() {
   const navigate = useNavigate()
 
-  function goToGame() {
-    navigate('/game')
-  }
-
-  function goTologin() {
-    navigate('/login')
-  }
-
-  function goToRegister() {
-    navigate('/register')
-  }
 
   return (
     <>
-      <div className="home-container">
+      <div className="home-top">
         <h1>Welcome to the Home Page</h1>
 
-        <button onClick={goTologin} >Tela de Login</button>
-        <button onClick={goToGame} >Tela de Games</button>
-        <button onClick={goToRegister} >Tela de Cadastro</button>
       </div>
+
+      <div className="home-down">
+
+        <div className='container'>
+          <div className="home-categories">
+            <h2>aqui estarão as categorias</h2>
+
+          </div>
+        </div>
+
+        <div className='container'>
+          <div className='home-favorites'>
+            <h2>aqui estarão os favoritos</h2>
+
+          </div>
+        </div>
+      </div>
+
     </>
   )
 }

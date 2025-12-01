@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import Button from '../../components/Buttons/button'
 
 import './style.css'
 
@@ -26,7 +27,7 @@ function Login() {
           <label htmlFor="password">Senha:</label>
           <input type="password" id="password" name="password" />
 
-          <button onClick={handleLogin}>Entrar</button>
+          <Button onClick={handleLogin}>Entrar</Button>
         </form>
 
         <a href="/register">Não tem uma conta? Cadastre-se</a>

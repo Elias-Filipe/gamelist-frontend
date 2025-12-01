@@ -1,5 +1,6 @@
 import './style.css'
 import { useNavigate } from 'react-router-dom'
+import Button from '../../components/Buttons/button'
 
 function Register() {
 
@@ -28,7 +29,7 @@ function Register() {
                     <input type="password" placeholder='Sua nova senha' id="password" name="password" /> 
                 </form>
 
-                <button onClick={handleRegister}>Cadastrar</button>
+                <Button onClick={handleRegister}>Cadastrar</Button>
 
             </div>
         </>
