@@ -1,11 +1,47 @@
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { use, useEffect, useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
 import Button from '../../components/Buttons/button'
+import api from '../../services/api'
 
 import './style.css'
 
 function Game() {
   const navigate = useNavigate()
+
+  const { id } = useParams()
+
+  const [game, setGame] = useState([])
+  const [posts, setPosts] = useState([])
+
+  const getGame = async () => {
+    try {
+      const response = await api.get('/games/1')
+      setGame(response.data)
+      console.log('Dados do jogo:', response.data);
+
+    } catch (error) {
+      console.error('Erro ao buscar dados do jogo:', error);
+    }
+  }
+
+  const getPost = async () => {
+    try {
+      const response = await api.get('/posts/game/1')
+      setPosts(response.data)
+      console.log('Dados dos posts:', response.data);
+
+    } catch (error) {
+      console.error('Erro ao buscar dados dos posts:', error);
+    }
+  }
+
+  useEffect(() => {
+    getGame()
+    getPost()
+  }, [id])
+
+
+
 
   function goToHome() {
     navigate('/')
@@ -15,22 +51,31 @@ function Game() {
     <>
       <div className="">
 
-        <h1>Game Page</h1>
+        <h1>{game.title}</h1>
 
         <div className='game-container'>
 
           <div className='game-content'>
-          <img src="um video ou talvez outra coisa"></img>
+
+            <img src={game.imgUrl}>{game.name}</img>
+
+            <h3>Plataformas: {game.platforms}</h3>
 
             <h2>Resenha do game</h2>
-            <textarea name="game-review" id="game-review">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</textarea>
-            <audio src="">Musica do joguinho</audio>
+            <p name="game-review" id="game-review">{game.longDescription}</p>
+
 
           </div>
 
           <div className='game-rating'>
-            <div>
-              <textarea name="" id="" cols="30"></textarea>
+            <div className='game-comments'>
+              {posts.map((post) => (
+                <div key={post.id}>
+                  
+                  <h3>{post.title}</h3>
+                  <p>{post.content}</p>
+                </div>
+              ))}
             </div>
           </div>
 

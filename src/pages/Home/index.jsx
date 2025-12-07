@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Button from '../../components/Buttons/button'
+import Carousel from '../../components/Carousel/carousel'
 
 import './style.css'
 
@@ -12,7 +13,7 @@ function Home() {
     <>
       <div className="home-top">
         <h1>Welcome to the Home Page</h1>
-
+        {/* <Carousel jogos {jogos}/> */}
       </div>
 
       <div className="home-down">

@@ -2,8 +2,7 @@ import { Link } from "react-router-dom";
 import './style.css';
 import Button from '../../components/Buttons/button'
 import CustomLink from '../CustomLinks/customLink'
-import Form from "../Forms/form";
-
+import Input from '../../components/Inputs/input'
 export default function Header() {
 
 
@@ -22,7 +21,7 @@ export default function Header() {
         </div>
 
         <div className="search-game">
-          <Form
+          <Input
             id="search"
             type="text"
             placeholder="Buscar jogos..."

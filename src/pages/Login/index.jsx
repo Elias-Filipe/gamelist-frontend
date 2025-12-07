@@ -1,18 +1,34 @@
 import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import Button from '../../components/Buttons/button'
-import Form from '../../components/Forms/form'
 import CustomLink from '../../components/CustomLinks/customLink'
+import Input from '../../components/Inputs/input'
+import api from '../../services/api'
 
 import './style.css'
 
 function Login() {
   const navigate = useNavigate()
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
 
-  const handleLogin = () => {
-    // Aqui você pode adicionar a lógica de autenticação
-    // Por enquanto, vamos apenas navegar para a página Home
-    navigate('/')
+  const handleLogin = async (event) => {
+    event.preventDefault()
+
+    try {
+      const response = await api.post('/auth/login', {
+        name: username,
+        password: password
+      })
+
+      localStorage.setItem('token', response.data.token)
+
+      navigate('/')
+    } catch (error) {
+      alert('Falha no login. Por favor, verifique suas credenciais.')
+      console.error('Erro ao fazer login:', error);
+    }
+
   }
 
   return (
@@ -22,24 +38,25 @@ function Login() {
 
         <h2>Seja muito bem vindo(a) ao Gamelist!</h2>
 
-        <div>
-          <Form
+        <form onSubmit={handleLogin} className="form-login">
+          <Input
             label="Nome"
             id="username"
             type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
           />
-          <Form
+          <Input
             label="Senha"
             id="password"
             type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
-          <Button onClick={handleLogin}>Entrar</Button>
-        </div>
+          <Button type="submit">Entrar</Button>
+        </form>
 
         <CustomLink to="/register" variant="muted">Não tem uma conta? Cadastre-se</CustomLink>
-
-        <a href="/register">Não tem uma conta? Cadastre-se</a>
-
 
       </div>
 
