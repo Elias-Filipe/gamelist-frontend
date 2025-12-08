@@ -1,4 +1,4 @@
-import { use, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import Button from '../../components/Buttons/button'
 import api from '../../services/api'
@@ -10,12 +10,12 @@ function Game() {
 
   const { id } = useParams()
 
-  const [game, setGame] = useState([])
+  const [game, setGame] = useState({})
   const [posts, setPosts] = useState([])
 
   const getGame = async () => {
     try {
-      const response = await api.get('/games/1')
+      const response = await api.get(`/games/${id}`)
       setGame(response.data)
       console.log('Dados do jogo:', response.data);
 
@@ -26,7 +26,7 @@ function Game() {
 
   const getPost = async () => {
     try {
-      const response = await api.get('/posts/game/1')
+      const response = await api.get(`/posts/game/${id}`)
       setPosts(response.data)
       console.log('Dados dos posts:', response.data);
 
@@ -57,13 +57,12 @@ function Game() {
 
           <div className='game-content'>
 
-            <img src={game.imgUrl}>{game.name}</img>
+            <img src={game.imgUrl} alt={game.title}></img>
 
             <h3>Plataformas: {game.platforms}</h3>
 
             <h2>Resenha do game</h2>
             <p name="game-review" id="game-review">{game.longDescription}</p>
-
 
           </div>
 

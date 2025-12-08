@@ -40,13 +40,17 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-
+  padding-top: 70px; 
+  padding-bottom: 60px;
+  
   font-family: "Poppins", sans-serif;
 
   background:
     linear-gradient(rgba(10, 10, 10, 0.55), rgba(10, 10, 10, 0.7)),
     url("./assets/background3.jpg") center/cover no-repeat fixed;
 }
+
+
 
 h1 {
   font-size: 3.2em;
@@ -62,7 +66,6 @@ h1 {
   backdrop-filter: blur(10px);
   padding: 25px;
   border-radius: var(--radius);
-  width: 100%;
   min-width: 480px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.45);
 }

@@ -1,0 +1,60 @@
+.carousel-container {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+
+.swiper {
+    width: 90%;
+    height: 350px;
+    padding: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-color: var(--primary);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius);
+    box-shadow: 0 0 20px var(--primary-glow);
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--primary-shadow);
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.swiper-slide :hover {
+    transform: scale(0.98);
+    box-shadow: var(--primary-glow);
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform .3s ease;
+}
+
+
+.swiper-scrollbar {
+    background: var(--bg-dark);
+    height: 60px;
+    border-radius: 8px;
+}
+
+.swiper-button-prev, 
+.swiper-button-next{
+    color: var(--primary);
+}
+
+.swiper-scrollbar{
+    color: var(--primary)
+}
