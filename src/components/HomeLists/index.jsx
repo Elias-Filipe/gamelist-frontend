@@ -36,7 +36,7 @@ function HomeLists({ type }) {
 
     const handleHomeListClick = (Id) => {
         if (type == "categories") {
-            navigate(`/list/${Id}`);
+            navigate(`/category/${Id}`);
         } else if (type == "games") {
             navigate(`/game/${Id}`);
         }

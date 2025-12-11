@@ -31,13 +31,7 @@ function Home() {
     }
   }
 
-  const handleCategoryClick = (id) => {
-    navigate(`/list/${id}`);
-  }
 
-  const handleGameClick = (id) => {
-    navigate(`/game/${id}`);
-  }
 
   useEffect(() => {
     getCategories()
@@ -47,7 +41,7 @@ function Home() {
   return (
     <>
       <div className="home-top">
-        <h1>Welcome to the Home Page</h1>
+        <h1>Escolha seu Game!</h1>
 
         <Carousel />
 

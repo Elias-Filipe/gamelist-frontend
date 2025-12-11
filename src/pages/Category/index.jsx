@@ -1,17 +1,18 @@
 import './style.css'
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import api from '../../services/api'
 
 
 function Category() {
     const navigate = useNavigate();
+    const {id} = useParams();
     const [categories, setCategories] = useState("");
     const [games, setgames] = useState([]);
 
     const getCategories = async () => {
         try {
-            const response = await api.get(`/lists/2`)
+            const response = await api.get(`/lists/${id}`)
             setCategories(response.data)
             console.log(response.data)
         } catch (error) {
@@ -21,7 +22,7 @@ function Category() {
 
     const getGames = async () => {
         try {
-            const response = await api.get(`/lists/2/games`)
+            const response = await api.get(`/lists/${id}/games`)
             setgames(response.data)
             console.log(response.data)
         } catch (error) {

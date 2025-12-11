@@ -10,6 +10,7 @@
   --primary-glow: #ff4c4c55;
   --primary-shadow: #ff4c4c22;
 
+  --text-primary: #ff4c4c;
   --text-light: #e5e5e5;
   --text-muted: #a1a1a1;
 
@@ -40,9 +41,9 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  padding-top: 70px; 
+  padding-top: 70px;
   padding-bottom: 60px;
-  
+
   font-family: "Poppins", sans-serif;
 
   background:
@@ -50,12 +51,18 @@ body {
     url("./assets/background3.jpg") center/cover no-repeat fixed;
 }
 
-
-
 h1 {
+  font-family: "Orbitron", sans-serif;
   font-size: 3.2em;
   line-height: 1.1;
+  letter-spacing: 1.5px;
+  color: var(--text-primary);
+
+  text-shadow: 
+    0 0 6px var(--bg-dark),
+    0 0 12px var(--primary-glow);
 }
+
 
 .container {
   display: flex;

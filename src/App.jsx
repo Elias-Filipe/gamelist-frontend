@@ -26,7 +26,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/favorites" element={<Favorites />} />
             <Route path="/adminpage" element={<AdminPage />} />
-            <Route path="/category" element={<Category />} />
+            <Route path="/category/:id" element={<Category />} />
             <Route path="/allgames" element={<AllGames />} />
           </Routes>
           <Footer />

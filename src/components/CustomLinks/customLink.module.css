@@ -2,6 +2,7 @@
   font-weight: 500;
   color: var(--text-light);
   text-decoration: inherit;
+  transition: var(--transition);
 }
 
 .link:hover {
