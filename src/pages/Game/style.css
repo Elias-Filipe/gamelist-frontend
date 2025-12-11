@@ -1,9 +1,13 @@
 .game-container {
     display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.content-container {
+    display: flex;
     flex-direction: row;
     gap: 50px;
-
-
 }
 
 .game-content {
@@ -14,15 +18,19 @@
     width: 100%;
 }
 
-textarea {
-    width: 100%;
-    height: 200px;
-    margin-top: 20px;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid var(--glass-border);
-    border-radius: 4px;
-    resize: vertical;
+.img-container {
+    border: 1px solid var(--primary);
+    border-radius: var(--radius);
+    box-shadow: 0 0 20px var(--primary-glow);
+    height: 50%;
+    min-height: 450px;
+}
+
+.game-review {
+    display: flex;
+    flex-direction: column;
+    padding: 4%;
+    gap: 10px;
 }
 
 .game-rating {
@@ -31,7 +39,29 @@ textarea {
     backdrop-filter: blur(10px);
     padding: 25px;
     border-radius: var(--radius);
-    width: 50%;
+    width: 60%;
+    max-height: 700px;
     min-width: 200px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.45);
+}
+
+.post-author {
+    color: var(--text-muted);
+}
+
+h3 {
+    color: var(--primary-hover);
+}
+
+p {
+
+    color: var(--text-light);
+}
+
+.post-title {
+    text-align: left;
+}
+
+.post-content {
+    text-align: left;
 }

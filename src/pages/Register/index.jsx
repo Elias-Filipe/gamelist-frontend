@@ -25,21 +25,19 @@ function Register() {
             alert('Falha no cadastro. Por favor, tente novamente.')
             console.error('Erro ao fazer cadastro:', error);
         }
-
     }
 
     return (
         <>
             <div className="container">
-
                 <h2>Cadastre-se</h2>
-
                 <form onSubmit={handleRegister} className="form-register">
                     <Input
                         label="Nome"
                         id="username"
                         type="text"
                         value={username}
+                        required
                         onChange={(e) => setUsername(e.target.value)}
                     />
                     <Input
@@ -47,6 +45,7 @@ function Register() {
                         id="email"
                         type="email"
                         value={email}
+                        required
                         onChange={(e) => setEmail(e.target.value)}
                     />
                     <Input
@@ -54,15 +53,14 @@ function Register() {
                         id="password"
                         type="password" 
                         value={password}
+                        required
                         onChange={(e) => setPassword(e.target.value)}
                     />
                     <Button type="submit">Cadastrar</Button>
                 </form>
-
             </div>
         </>
     )
-
 }
 
 export default Register

@@ -4,6 +4,7 @@ import api from '../../services/api';
 
 import './style.css'
 import Carousel from '../../components/Carousel';
+import HomeLists from '../../components/HomeLists';
 
 function Home() {
 
@@ -16,7 +17,6 @@ function Home() {
     try {
       const response = await api.get("/lists")
       setCategories(response.data)
-      console.log("listas de categorias: ", response.data)
     } catch (error) {
       console.error("Erro ao buscar por lista de categorias", error)
     }
@@ -26,19 +26,16 @@ function Home() {
     try {
       const response = await api.get(`/games`)
       setGames(response.data)
-      console.log("Lista de games: ", response.data)
     } catch (error) {
       console.log("Erro ao buscar por lista de games", error)
     }
   }
 
   const handleCategoryClick = (id) => {
-    console.log("Categoria clicada:", id);
     navigate(`/list/${id}`);
   }
 
   const handleGameClick = (id) => {
-    console.log("Game clicado:", id);
     navigate(`/game/${id}`);
   }
 
@@ -60,26 +57,18 @@ function Home() {
 
         <div className='container'>
           <h2>Categorias</h2>
-          <div className="home-categories">
+          <div className="home-list-container">
 
-            {categories.map((category) =>
-              <div key={category.id} className='category-item' onClick={() => handleCategoryClick(category.id)}>
-                {category.name}
-              </div>
-            )}
+          <HomeLists type = "categories" />
 
           </div>
         </div>
 
         <div className='container'>
           <h2>Favoritos (Em breve)</h2>
-          < div className='home-favorites'>
+          < div className='homelist-container'>
 
-            {games.map((game) =>
-              <div key={game.id} className='favorite-item' onClick={() => handleGameClick(game.id)}>
-                {game.title}
-              </div>
-            )}
+            <HomeLists type = "games" />
 
           </div>
         </div>

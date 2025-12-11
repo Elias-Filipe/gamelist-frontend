@@ -22,28 +22,26 @@ function Login() {
       })
 
       localStorage.setItem('token', response.data.token)
+      localStorage.setItem('userNameLogado', username)
 
-      navigate('/')
+      navigate('/home')
     } catch (error) {
       alert('Falha no login. Por favor, verifique suas credenciais.')
       console.error('Erro ao fazer login:', error);
     }
-
   }
 
   return (
     <>
-
       <div className="container">
-
         <h2>Seja muito bem vindo(a) ao Gamelist!</h2>
-
         <form onSubmit={handleLogin} className="form-login">
           <Input
             label="Nome"
             id="username"
             type="text"
             value={username}
+            required
             onChange={(e) => setUsername(e.target.value)}
           />
           <Input
@@ -51,15 +49,13 @@ function Login() {
             id="password"
             type="password"
             value={password}
+            required
             onChange={(e) => setPassword(e.target.value)}
           />
           <Button type="submit">Entrar</Button>
         </form>
-
         <CustomLink to="/register" variant="muted">Não tem uma conta? Cadastre-se</CustomLink>
-
       </div>
-
     </>
   )
 }

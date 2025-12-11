@@ -24,14 +24,12 @@ function Carousel() {
         try {
             const response = await api.get(`/games`)
             setGames(response.data)
-            console.log("Lista de games: ", response.data)
         } catch (error) {
             console.log("Erro ao buscar por lista de games", error)
         }
     }
 
     const handleCarouselClick = (id) => {
-        console.log("Game clicado:" , id);
         navigate(`/game/${id}`);
     }
 
@@ -46,10 +44,10 @@ function Carousel() {
             slidesPerView={3}
             navigation
             mousewheel={{ hide: true}}
-            
             scrollbar={{ draggable: true }}
             autoplay={{ delay: 3000, disableOnInteraction: false }}
             loop={true}
+            className='carousel'
         >
             {games.map((game) => (
             <SwiperSlide key={game.id}>

@@ -1,0 +1,40 @@
+
+.games-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 5%;
+    padding-top: 5%;
+}
+
+.game-bylist-container {
+    display: flex;
+    flex-direction: row;
+
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.45);
+}
+
+.game-image {
+    display: block;
+    object-fit: cover;
+    border-radius: var(--radius);
+}
+
+.game-content{
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    gap: 6px;
+}
+
+.game-title{
+    align-self: self-start;
+    text-align: left;
+}
+
+.game-description{
+    text-align: left;
+}

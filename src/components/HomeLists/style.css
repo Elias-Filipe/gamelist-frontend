@@ -1,0 +1,41 @@
+.homelists {
+  width: 100%;
+  height: 280px;           
+  overflow: hidden;
+  padding-right: 20px;     
+  box-sizing: border-box;
+}
+
+.homelist-item {
+  padding: 10px;
+  margin: 0px 0;
+  background: var(--bg-dark-2);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: .2s;
+  box-shadow: 0 0 10px var(--primary-glow);
+}
+
+.homelist-item:hover {
+  background: var(--primary-glow);
+}
+
+.homelists .swiper-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.homelists .swiper-scrollbar {
+  width: 6px;
+  background: var(--primary);
+}
+
+.homelist-item {
+  padding: 10px;
+  margin: 6px 0;
+  background: var(--bg-dark-2);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: .3s;
+  box-shadow: 0 0 10px var(--primary-glow);
+}
